@@ -3,14 +3,18 @@ import { connect } from 'react-redux';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div>
-      <Switch>
-        <Route exact path="/" component={}/>
-      </Switch>
-    </div>
-  );
+class App extends Component {
+  
+  render() {
+    return (
+      <div>
+        <Switch>
+          <Route exact path="/" component={}/>
+        </Switch>
+      </div>
+    );
+  }
+
 }
 
-export default App;
+export default connect()(App);
