@@ -1,8 +1,10 @@
-export default function contentReducer(state = [], action){
+export default function contentReducer(state = { contents: []}, action){
   switch (action.type) {
-    // case value:
-      
-    //   break;
+    case "GET_CONTENT":
+      return{
+        ...state,
+        contents: [...action.contents]
+      };
   
     default:
       return state;
