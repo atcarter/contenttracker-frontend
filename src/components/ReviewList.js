@@ -7,7 +7,7 @@ class ReviewList extends Component {
     return (
       <div className={`${this.props.content_id}-reviews`}>
         <h4>Review List</h4>
-        {this.props.reviews.map((review) => {
+        {this.props.reviews && this.props.reviews.map(review => {
           <Review 
             id={review.id} 
             content_id={review.content_id} 
