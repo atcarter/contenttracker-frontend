@@ -9,7 +9,7 @@ export default function ContentList() {
 
   useEffect(() => {
     dispatch(fetchContents())
-  })
+  }, [])
 
 
 
@@ -17,7 +17,16 @@ export default function ContentList() {
   return (
     <div className='content-list'>
       <h2>Content List</h2>
-      <p>This is where the movies go</p>
+      {contents.map((content) => 
+        <Content 
+          content_id={content.id}
+          title={content.title} 
+          content_type={content.content_type}
+          year={content.year}
+          details={content.details}
+          reviews={content.reviews}
+        />
+      )}
     </div>
   )
   
