@@ -9,7 +9,7 @@ class Content extends Component {
       <div id={`content-${this.props.content_id}`}>
         <h3>{`${this.props.title} (${this.props.year})`}</h3>
         <i>{this.props.content_type}</i>
-        <p>{this.props.description}</p>
+        <p>{this.props.details}</p>
         <ReviewList reviews={this.props.reviews} content_id={this.props.content_id} />
       </div>
     )
