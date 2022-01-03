@@ -20,7 +20,7 @@ export default function ContentList() {
       <h2>Content List</h2>
       {contents.map((content) => 
         <Content 
-          content_id={content.id} 
+          key={content.id} 
           title={content.title} 
           content_type={content.content_type} 
           year={content.year} 
