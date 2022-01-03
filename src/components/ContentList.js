@@ -18,7 +18,7 @@ export default function ContentList() {
   return (
     <div className='content-list'>
       <h2>Content List</h2>
-      {contents.map((content) => 
+      {contents && contents.map(content => 
         <Content 
           key={content.id} 
           title={content.title} 
