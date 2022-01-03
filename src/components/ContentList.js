@@ -1,16 +1,19 @@
-import React, { Component } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-class ContentList extends Component {
+export default function ContentList() {
 
-  render() {
-    return (
-      <div className='content-list'>
-        <h2>Content List</h2>
-        <p>This is where the movies go</p>
-      </div>
-    )
-  }
+  const contents = useSelector((state) => state)
+  const dispatch = useDispatch()
+
+
+ 
+  return (
+    <div className='content-list'>
+      <h2>Content List</h2>
+      <p>This is where the movies go</p>
+    </div>
+  )
+  
 
 }
 
