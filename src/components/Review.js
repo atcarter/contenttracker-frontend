@@ -6,9 +6,9 @@ class Review extends Component {
   render() {
 
     return (
-      <div id=''>
-        <h3>Username Rating</h3>
-        <p>Description</p>
+      <div id={`review-${this.props.id}`}>
+        <strong>{`${this.props.username} - ${"*".repeat(this.props.rating)}`}</strong>
+        <p>{this.props.description}</p>
       </div>
     )
   }
