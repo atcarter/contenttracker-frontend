@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 export default function ContentList() {
 
-  const contents = useSelector((state) => state)
+  const contents = useSelector((state) => state.contents)
   const dispatch = useDispatch()
 
 
