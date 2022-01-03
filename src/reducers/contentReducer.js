@@ -3,7 +3,7 @@ export default function contentReducer(state = { contents: []}, action){
     case "GET_CONTENT":
       return{
         ...state,
-        contents: [action.contents]
+        contents: action.contents
       };
   
     default:
