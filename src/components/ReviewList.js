@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { Review } from './Review';
 
 class ReviewList extends Component {
 
   render() {
     return (
-      <div className='#review-list'> //need to add content id here
-        <h2>Review List</h2>
-        <p>This is where the reviews go</p>
+      <div className={`${this.props.content_id}-reviews`}>
+        <h4>Review List</h4>
+        {this.props.reviews.map((review) => {
+          <Review 
+            id={review.id} 
+            content_id={review.content_id} 
+            username={review.username}
+            rating={review.rating}
+            description={review.description}
+          />
+        })}
       </div>
     )
   }
