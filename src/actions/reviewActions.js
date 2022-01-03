@@ -31,3 +31,15 @@ export const createReview = (newReview) => {
       .catch(fail => alert(fail));
   };
 };
+export const deleteContent = (reviewId) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/reviews/${reviewId}`, {
+      method: "DELETE"
+    })
+      .then(response => response.json())
+      .then(data => {
+        dispatch({ type: "DELETE_CONTENT", payload: reviewId });
+      })
+      .catch(fail => alert(fail));
+  };
+};
