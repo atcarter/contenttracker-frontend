@@ -31,3 +31,16 @@ export const createContent = (newContent) => {
       .catch(fail => alert(fail));
   };
 };
+
+export const deleteContent = (contentId) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/contents/${contentId}`, {
+      method: "DELETE"
+    })
+      .then(response => response.json())
+      .then(data => {
+        dispatch({ type: "DELETE_CONTENT", payload: contentId });
+      })
+      .catch(fail => alert(fail));
+  };
+};
