@@ -1,9 +1,16 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchContents } from '../actions/contentActions';
 
 export default function ContentList() {
 
   const contents = useSelector((state) => state.contents)
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchContents())
+  })
+
 
 
  
@@ -16,5 +23,3 @@ export default function ContentList() {
   
 
 }
-
-export default ContentList;
