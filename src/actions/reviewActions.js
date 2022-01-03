@@ -8,3 +8,26 @@ export const fetchReviews = () => {
       .catch(fail => alert(fail));
   };
 };
+
+export const createReview = (newReview) => {
+  return (dispatch) => {
+    fetch("http://localhost:3000/reviews", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        username: newReview.username,
+        rating: newReview.rating,
+        description: newReview.description,
+        content_id: newReview.content_id
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        dispatch({ type: "CREATE_REVIEW", reviews: data });
+      })
+      .catch(fail => alert(fail));
+  };
+};
