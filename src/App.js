@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import ContentList from './components/ContentList';
+import About from './components/About';
 
 class App extends Component {
 
