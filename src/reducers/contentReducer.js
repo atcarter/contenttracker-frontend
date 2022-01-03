@@ -5,6 +5,11 @@ export default function contentReducer(state = { contents: [], reviews: []}, act
         ...state,
         contents: action.contents
       };
+      case "GET_REVIEWS":
+        return{
+          ...state,
+          reviews: action.reviews
+        };
   
     default:
       return state;
