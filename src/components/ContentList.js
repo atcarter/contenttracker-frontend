@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContents } from '../actions/contentActions';
-import { Content } from './Content'
+import Content from './Content'
 
 export default function ContentList() {
 
