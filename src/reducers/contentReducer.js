@@ -1,4 +1,4 @@
-export default function contentReducer(state = { contents: []}, action){
+export default function contentReducer(state = { contents: [], reviews: []}, action){
   switch (action.type) {
     case "GET_CONTENT":
       return{
