@@ -32,7 +32,7 @@ export const createReview = (newReview, history) => {
       .catch(fail => alert(fail));
   };
 };
-export const deleteContent = (reviewId) => {
+export const deleteReview = (reviewId) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/reviews/${reviewId}`, {
       method: "DELETE"
