@@ -26,7 +26,7 @@ export const createContent = (newContent) => {
     })
       .then(response => response.json())
       .then(data => {
-        dispatch({ type: "CREATE_CONTENT", contents: data });
+        dispatch({ type: "CREATE_CONTENT", content: data });
       })
       .catch(fail => alert(fail));
   };
