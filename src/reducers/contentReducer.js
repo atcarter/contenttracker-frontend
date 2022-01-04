@@ -12,23 +12,11 @@ function contentsReducer(state = [], action) {
     case "GET_CONTENT":
       return[...state, action.contents];
 
-      case "GET_REVIEWS":
-        return{
-          ...state,
-          contents: [...state.contents],
-          reviews: [...state.reviews, action.reviews]
-        };
       case "CREATE_CONTENT":
-        return{
-          ...state,
-          reviews: [...state.reviews],
-          contents: [...state.contents, action.content]
-        };
+        return[...state, action.content];
+
       case "DELETE_CONTENT":
-        return{
-          ...state,
-          reviews: action.reviews
-        };
+        return[...state].filter(elem => elem.id !== action.payload);
   
     default:
       return state;
