@@ -9,8 +9,9 @@ export default function ReviewForm() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
 
-  const contentID = useParams();
-  const parentContent = useSelector((state) => state.contents.filter((elem)=> elem.id === contentID))
+  const { contentID } = useParams();
+  const storeContents = useSelector((state) => state.contents)
+  const parentContent = storeContents.filter(elem => elem.id === parseInt(contentID))
 
   const onSubmit = data => {
     dispatch(createReview(data))
