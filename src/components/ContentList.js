@@ -11,11 +11,15 @@ export default function ContentList() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(fetchContents())
+    if (contents.length === 0) {
+      dispatch(fetchContents())
+    }
   }, [])
 
   useEffect(() => {
-    dispatch(fetchReviews())
+    if (reviews.length === 0) {
+      dispatch(fetchReviews())
+    }
   }, [])
 
 
