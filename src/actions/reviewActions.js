@@ -9,7 +9,7 @@ export const fetchReviews = () => {
   };
 };
 
-export const createReview = (newReview) => {
+export const createReview = (newReview, history) => {
   return (dispatch) => {
     fetch("http://localhost:3000/reviews", {
       method: "POST",
@@ -27,6 +27,7 @@ export const createReview = (newReview) => {
       .then(response => response.json())
       .then(data => {
         dispatch({ type: "CREATE_REVIEW", review: data });
+        history.push("/contents")
       })
       .catch(fail => alert(fail));
   };

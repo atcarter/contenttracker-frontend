@@ -9,7 +9,7 @@ export const fetchContents = () => {
   };
 };
 
-export const createContent = (newContent) => {
+export const createContent = (newContent, history) => {
   return (dispatch) => {
     fetch("http://localhost:3000/contents", {
       method: "POST",
@@ -27,6 +27,7 @@ export const createContent = (newContent) => {
       .then(response => response.json())
       .then(data => {
         dispatch({ type: "CREATE_CONTENT", content: data });
+        history.push("/contents")
       })
       .catch(fail => alert(fail));
   };
