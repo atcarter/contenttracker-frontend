@@ -9,7 +9,7 @@ class ReviewList extends Component {
         <h4>Review List</h4>
         {this.props.reviews && this.props.reviews.map(review =>
           <Review 
-            key={review.id} 
+            key={`review-${review.id}`} 
             id={review.id}
             content_id={review.content_id} 
             username={review.username}
