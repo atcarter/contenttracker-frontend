@@ -10,7 +10,8 @@ export default reducer;
 function contentsReducer(state = [], action) {
   switch (action.type) {
     case "GET_CONTENT":
-      return[...state, action.contents];
+      // console.log({...state, contents: action.contents})
+      return {...state, contents: action.contents};
 
       case "CREATE_CONTENT":
         return[...state, action.content];
@@ -26,7 +27,7 @@ function contentsReducer(state = [], action) {
 function reviewsReducer(state = [], action) {
   switch (action.type) {
     case "GET_REVIEWS":
-      return[...state, action.reviews];
+      return{...state, reviews: action.reviews};
 
       case "CREATE_REVIEW":
         return[...state, action.content];
@@ -38,6 +39,39 @@ function reviewsReducer(state = [], action) {
       return state;
   }
 }
+
+
+// function contentsReducer(state = [], action) {
+//   switch (action.type) {
+//     case "GET_CONTENT":
+//       return[...state, action.contents];
+
+//       case "CREATE_CONTENT":
+//         return[...state, action.content];
+
+//       case "DELETE_CONTENT":
+//         return[...state].filter(elem => elem.id !== action.payload);
+  
+//     default:
+//       return state;
+//   }
+// }
+
+// function reviewsReducer(state = [], action) {
+//   switch (action.type) {
+//     case "GET_REVIEWS":
+//       return[...state, action.reviews];
+
+//       case "CREATE_REVIEW":
+//         return[...state, action.content];
+
+//       case "DELETE_REVIEW":
+//         return[...state].filter(elem => elem.id !== action.payload);
+  
+//     default:
+//       return state;
+//   }
+// }
 
 // function contentReducer(state = { contents: [], reviews: []}, action){
 //   switch (action.type) {
