@@ -11,7 +11,8 @@ function contentsReducer(state = [], action) {
   switch (action.type) {
     case "GET_CONTENT":
       // console.log({...state, contents: action.contents})
-      return {...state, contents: action.contents};
+      // return {...state, contents: action.contents};
+      return [...state, ...action.contents]
 
       case "CREATE_CONTENT":
         return[...state, action.content];
@@ -27,7 +28,9 @@ function contentsReducer(state = [], action) {
 function reviewsReducer(state = [], action) {
   switch (action.type) {
     case "GET_REVIEWS":
-      return{...state, reviews: action.reviews};
+      // return{...state, reviews: action.reviews};
+      return [...state, ...action.reviews]
+
 
       case "CREATE_REVIEW":
         return[...state, action.content];
