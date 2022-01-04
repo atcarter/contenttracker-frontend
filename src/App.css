@@ -38,6 +38,7 @@
 } */
 
 body {
+  text-align: center;
   background-color: rgba(44, 66, 82, 0.973);
   color: bisque;
 }
