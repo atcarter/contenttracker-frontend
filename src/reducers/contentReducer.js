@@ -1,5 +1,12 @@
 import { combineReducers } from "redux";
 
+const reducer = combineReducers({
+  contents: contentReducer,
+  reviews: reviewsReducer
+});
+
+export default reducer;
+
 export default function contentReducer(state = { contents: [], reviews: []}, action){
   switch (action.type) {
     case "GET_CONTENT":
