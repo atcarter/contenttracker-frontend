@@ -2,19 +2,20 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { createReview } from '../actions/reviewActions';
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { useParams, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function ReviewForm() {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
+  let history = useHistory();
 
   const { contentID } = useParams();
   const storeContents = useSelector((state) => state.contents)
   const parentContent = storeContents.filter(elem => elem.id === parseInt(contentID))
 
   const onSubmit = data => {
-    dispatch(createReview(data))
+    dispatch(createReview(data, history))
   }
 
   if (parentContent.length < 1) {
