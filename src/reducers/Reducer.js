@@ -33,7 +33,7 @@ function reviewsReducer(state = [], action) {
 
 
       case "CREATE_REVIEW":
-        return[...state, action.content];
+        return[...state, action.review];
 
       case "DELETE_REVIEW":
         return[...state].filter(elem => elem.id !== action.payload);
