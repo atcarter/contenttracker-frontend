@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ReviewList from './ReviewList';
 
 class Content extends Component {
@@ -11,6 +12,7 @@ class Content extends Component {
         <i>{this.props.content_type}</i>
         <p>{this.props.details}</p>
         <ReviewList reviews={this.props.reviews} content_id={this.props.id} />
+        <Link to={`/contents/${this.props.id}/review`}>New Review</Link>
       </div>
     )
   }
