@@ -11,6 +11,7 @@ class Content extends Component {
         <h3>{`${this.props.title} (${this.props.year})`}</h3>
         <i>{this.props.content_type}</i>
         <p>{this.props.details}</p>
+        <button onClick={() => this.props.delete(this.props.id)}> Delete {this.props.title} </button>
         <ReviewList reviews={this.props.reviews} content_id={this.props.id} />
         <Link to={`/contents/${this.props.id}/review`}>New Review</Link>
       </div>

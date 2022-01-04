@@ -3,12 +3,17 @@ import { useEffect } from 'react';
 import { fetchContents } from '../actions/contentActions';
 import { fetchReviews } from '../actions/reviewActions'
 import Content from './Content'
+import { deleteContent } from '../actions/contentActions'
 
 export default function ContentList() {
 
   const contents = useSelector((state) => state.contents)
   const reviews = useSelector((state) => state.reviews)
   const dispatch = useDispatch()
+
+  const handleDelete = (contentID) => {
+    dispatch(deleteContent(contentID))
+  }
 
   useEffect(() => {
     if (contents.length === 0) {
@@ -37,6 +42,7 @@ export default function ContentList() {
           year={content.year} 
           details={content.details} 
           reviews={reviews.filter(review => review.content_id === content.id)}
+          delete={handleDelete}
         />
       ))}
     </div>
