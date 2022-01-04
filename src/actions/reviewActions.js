@@ -26,7 +26,7 @@ export const createReview = (newReview) => {
     })
       .then(response => response.json())
       .then(data => {
-        dispatch({ type: "CREATE_REVIEW", reviews: data });
+        dispatch({ type: "CREATE_REVIEW", review: data });
       })
       .catch(fail => alert(fail));
   };
