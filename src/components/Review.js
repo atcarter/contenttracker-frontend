@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 
 class Review extends Component {
 
