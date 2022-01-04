@@ -6,7 +6,7 @@ class Review extends Component {
 
     return (
       <div id={`review-${this.props.id}`}>
-        <strong>{`${this.props.username} - ${"*".repeat(this.props.rating)}`}</strong>
+        <strong>{`${this.props.username} - ${"*".repeat(this.props.rating)}\t\t`}</strong><button > X </button>
         <p>{this.props.description}</p>
       </div>
     )
