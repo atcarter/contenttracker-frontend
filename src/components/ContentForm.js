@@ -12,5 +12,14 @@ export default function ContentForm() {
     dispatch(createContent(data))
   }
 
+  return(
+    <div id='content-form-div'>
+      <h2>New Content Form</h2>
+      <form onSubmit={handleSubmit(onSubmit)}>
+
+      </form>
+    </div>
+  )
+
 
 }
