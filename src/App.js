@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import ContentList from './components/ContentList';
 import About from './components/About';
 import ContentForm from './components/ContentForm';
+import ReviewForm from './components/ReviewForm';
 
 class App extends Component {
 
@@ -17,6 +18,7 @@ class App extends Component {
           <Route exact path="/contents" component={ContentList}/>
           <Route exact path="/about" component={About}/>
           <Route exact path="/contents/new" component={ContentForm}/>
+          <Route exact path="/contents/:contentID/review" component={ReviewForm} />
         </Switch>
       </div>
     );
