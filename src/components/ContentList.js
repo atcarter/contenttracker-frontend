@@ -6,8 +6,8 @@ import Content from './Content'
 
 export default function ContentList() {
 
-  const contents = useSelector((state) => state.contents.contents)
-  const reviews = useSelector((state) => state.reviews.reviews)
+  const contents = useSelector((state) => state.contents)
+  const reviews = useSelector((state) => state.reviews)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function ContentList() {
       <h2>Content List</h2>
       {contents && contents.map(content => (
         <Content 
-          key={content.id} 
+          key={`content-${content.id}`} 
           id={content.id}
           title={content.title} 
           content_type={content.content_type} 
