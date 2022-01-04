@@ -38,7 +38,7 @@ export const deleteContent = (reviewId) => {
     })
       .then(response => response.json())
       .then(data => {
-        dispatch({ type: "DELETE_CONTENT", payload: reviewId });
+        dispatch({ type: "DELETE_REVIEW", payload: reviewId });
       })
       .catch(fail => alert(fail));
   };
