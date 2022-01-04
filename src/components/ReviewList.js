@@ -2,11 +2,16 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Review from './Review';
+import { deleteReview } from '../actions/reviewActions';
 
 export default function ReviewList (props) {
   // const reviewsTotal = useSelector((state) => state.reviews)
   // const reviews = reviewsTotal.filter(review => review.content_id === props.content_id)
   const dispatch = useDispatch()
+  const handleDelete = (reviewID) => {
+    dispatch(deleteReview(reviewID))
+  }
+
 
   return (
     <div className={`${props.content_id}-reviews`}>
@@ -19,6 +24,7 @@ export default function ReviewList (props) {
           username={review.username}
           rating={review.rating}
           description={review.description}
+          delete={handleDelete}
         />
       ))}
     </div>
