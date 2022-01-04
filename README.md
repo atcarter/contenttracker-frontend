@@ -1,4 +1,4 @@
-# Content-Tracker-App
+# Content Tracker Application
 
 This repository is the frontend to a content tracking web application that allows a user/users to create a list of content they plan to consume i.e. books, movies, videogames, etc. [Here is the link to the backend](https://github.com/atcarter/contenttracker-frontend). A user is able to view their content and their relevant reviews, add/delete content, and add/delete reviews.
 
