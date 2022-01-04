@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 } */
+body {
+  background-color: rgba(44, 66, 82, 0.973);
+  color: bisque;
+}
+
+h3 {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
