@@ -28,23 +28,11 @@ function reviewsReducer(state = [], action) {
     case "GET_REVIEWS":
       return[...state, action.reviews];
 
-      case "GET_REVIEWS":
-        return{
-          ...state,
-          contents: [...state.contents],
-          reviews: [...state.reviews, action.reviews]
-        };
-      case "CREATE_CONTENT":
-        return{
-          ...state,
-          reviews: [...state.reviews],
-          contents: [...state.contents, action.content]
-        };
-      case "DELETE_CONTENT":
-        return{
-          ...state,
-          reviews: action.reviews
-        };
+      case "CREATE_REVIEW":
+        return[...state, action.content];
+
+      case "DELETE_REVIEW":
+        return[...state].filter(elem => elem.id !== action.payload);
   
     default:
       return state;
