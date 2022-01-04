@@ -2,14 +2,17 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { createContent } from '../actions/contentActions';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function ContentForm() {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
 
+  let history = useHistory()
+
   const onSubmit = data => {
-    dispatch(createContent(data))
+    dispatch(createContent(data, history))
   }
 
   return(
