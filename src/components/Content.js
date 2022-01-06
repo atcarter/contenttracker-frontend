@@ -13,7 +13,7 @@ class Content extends Component {
         <p>{this.props.details}</p>
         <button onClick={() => this.props.delete(this.props.id)}> Delete {this.props.title} </button>
         <ReviewList reviews={this.props.reviews} content_id={this.props.id} />
-        <Link to={`/contents/${this.props.id}/review`}>New Review</Link>
+        <Link to={`/contents/${this.props.id}/reviews/new`}>New Review</Link>
       </div>
     )
   }

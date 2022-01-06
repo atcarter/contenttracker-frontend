@@ -18,7 +18,7 @@ class App extends Component {
           <Route exact path="/contents" component={ContentList}/>
           <Route exact path="/about" component={About}/>
           <Route exact path="/contents/new" component={ContentForm}/>
-          <Route exact path="/contents/:contentID/review" component={ReviewForm} />
+          <Route exact path="/contents/:contentID/reviews/new" component={ReviewForm} />
         </Switch>
       </div>
     );
