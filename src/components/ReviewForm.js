@@ -41,9 +41,7 @@ export default function ReviewForm() {
           <input id='description' name='description' {...register("description", { required: true })} />
           {errors.description && "A description is required!"}<br/>
   
-          {/* <label htmlFor='content_id'>Content Name: </label> */}
           <input type="hidden" id='content_id' name='content_id'  value={parentContent[0].id} {...register("content_id", { required: true })} />
-          {/* {errors.content_id && "This cannot be changed"}<br/> */}
   
           <input type="submit"/>
   
