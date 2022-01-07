@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchContents } from '../actions/contentActions';
 import { fetchReviews } from '../actions/reviewActions'
 import Content from './Content'
@@ -27,12 +27,20 @@ export default function ContentList() {
     }
   }, [])
 
+  //Add a high level input that takes a number, and add buttons to each title that will increment when pushed by the amount in the input 
+
+  const [incrementValue, setIncrement] = useState(0)
+  // const handleChange((event) => {
+
+  // })
+
 
 
  
   return (
     <div className='content-list'>
       <h2>Content List</h2>
+      <input type="number" onChange={(event)=> setIncrement(parseInt(event.target.value))} />
       {contents && contents.map(content => (
         <Content 
           key={`content-${content.id}`} 
@@ -43,6 +51,7 @@ export default function ContentList() {
           details={content.details} 
           reviews={reviews.filter(review => review.content_id === content.id)}
           delete={handleDelete}
+          inc={incrementValue}
         />
       ))}
     </div>
